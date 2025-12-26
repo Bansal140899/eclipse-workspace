@@ -1,0 +1,21 @@
+package multithreading;
+
+public class Demo implements Runnable{
+    
+	String res1 = "Java";
+	String res2 = "SQL";
+	String res3 = "DSA";
+	
+
+	public void run() {
+	    String name = Thread.currentThread().getName();
+	    
+	    if(name.equals("STUDENT1")) {
+	    	try {
+	    		
+	    	}
+	    }
+		
+	}
+
+}

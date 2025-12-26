@@ -1,0 +1,61 @@
+package com.prasoon;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import jakarta.servlet.Servlet;
+import jakarta.servlet.ServletConfig;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.ServletResponse;
+
+public class ServletDem implements Servlet {
+
+	@Override
+	public void destroy() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public ServletConfig getServletConfig() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getServletInfo() { 
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void init(ServletConfig arg0) throws ServletException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
+	
+	 res.setContentType("text/html");
+        PrintWriter out = res.getWriter();
+
+     
+        out.println("<!DOCTYPE html>");
+        out.println("<html>");
+        out.println("<head>");
+        out.println("<title>Animated Page</title>");
+        out.println("<style>");
+        out.println("body { display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background: #f0f0f0; }");
+        out.println(".animate-text { font-size: 40px; font-weight: bold; color: #ff5733; animation: bounce 2s infinite; }");
+        out.println("@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-30px); } }");
+        out.println("</style>");
+        out.println("</head>");
+        out.println("<body>");
+        out.println("<div class='animate-text'>Welcome to Animation Servlet!</div>");
+        out.println("</body>");
+        out.println("</html>");
+	}
+
+}

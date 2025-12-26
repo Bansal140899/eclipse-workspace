@@ -1,0 +1,31 @@
+package com.ajay.hibernatprojectparsoon;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+import com.ajay.entity.Registration;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+       Configuration cfg = new Configuration();
+       cfg.configure("cfg.xml");
+       SessionFactory factory = cfg.buildSessionFactory();
+       System.out.println(factory);
+       
+       Session session1 = factory.openSession();
+       Transaction tx = session1.beginTransaction();
+       Registration reg = new Registration(1 ,"ajay" ,"kota" ,98874);
+       
+       session1.save(reg);
+       session1.close();
+       factory.close();
+    }
+}

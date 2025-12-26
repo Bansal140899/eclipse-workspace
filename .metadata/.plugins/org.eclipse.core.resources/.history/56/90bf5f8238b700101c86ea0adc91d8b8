@@ -1,0 +1,24 @@
+package com.ajaysoft.applets;
+
+import java.applet.Applet;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+
+public class LogoApplet extends Applet {
+	
+	
+	
+	public void init() {
+		this.setVisible(true);
+		this.setBackground(Color.green);
+	}
+	public void paint(Graphics g) {
+		
+		Font font = new Font("arial" ,Font.BOLD+Font.ITALIC ,30);
+		g.setFont(font);
+		g.drawString("ajay software soltuion ", 150, 170);
+		
+	}
+
+}

@@ -1,0 +1,48 @@
+package com.Servlet;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+import com.DAO.PostDao;
+import com.User.Post;
+import com.db.DBConnect;
+
+
+@WebServlet("/AddNotesServlet")
+public class AddNotesServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    
+    public AddNotesServlet() {
+        super();
+       
+    }
+
+	
+	
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		int uid = Integer.parseInt(request.getParameter("uid"));
+		String title = request.getParameter("title");
+		String content = request.getParameter("content");
+		
+		
+		PostDao po = new PostDao(DBConnect.getConn());
+boolean f = po.AddNotes(title, content, uid);
+//		po.setTitle(title);
+//		po.setContent(content);
+//		po.setContent(content);
+		
+//		boolean f = 
+if(f) {
+	System.out.println("data insert successsfully");
+}else {
+	System.out.println("data is not insterted");
+}
+	}
+
+}

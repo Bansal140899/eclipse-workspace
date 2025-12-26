@@ -1,0 +1,50 @@
+package com.DAO;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import com.User.Post;
+import com.User.UserDetails;
+
+public class PostDao {
+	private Connection conn;
+
+	public PostDao(Connection conn) {
+		super();
+		this.conn = conn;
+	}
+	
+	
+	
+	
+	
+	 public boolean AddNotes(final String title, final String content, final int uid)
+	    {
+	        boolean f = false;
+
+	        try
+	        {
+	            final String query = "insert into post(title, content, uid) values(?,?,?)";
+	            final PreparedStatement preparedStatement = conn.prepareStatement(query);
+	            preparedStatement.setString(1, title);
+	            preparedStatement.setString(2, content);
+	            preparedStatement.setInt(3, uid);
+
+	            final int count = preparedStatement.executeUpdate();
+
+	            if (count == 1)
+	            {
+	                f = true;
+	            }
+
+	        }
+	        catch (final Exception e)
+	        {
+	            e.printStackTrace();
+	        }
+
+	        return f;
+	    }
+	
+
+}

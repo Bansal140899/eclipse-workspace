@@ -1,0 +1,45 @@
+package com.DAO;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import com.User.Post;
+import com.User.UserDetails;
+
+public class PostDao {
+	private Connection conn;
+
+	public PostDao(Connection conn) {
+		super();
+		this.conn = conn;
+	}
+	
+	
+	
+	
+	
+	public boolean AddNotes(String ti ,String co ,int ui) {
+		boolean f = false;
+		try {
+			String q = "insert into enotes.post(title,content ,uid ) values(? ,?, ?)";
+			PreparedStatement p = conn.prepareStatement(q);
+			p.setString(1,ti );
+			p.setString(2 , co);
+			p.setInt(3, ui);
+			
+			int i =p.executeUpdate();
+			if(i==1){
+				f = true;
+				
+			}
+			
+		}catch(Exception e) {
+			
+			e.printStackTrace();
+			
+		}
+		return f;
+	}
+	
+
+}

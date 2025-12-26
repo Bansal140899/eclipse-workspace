@@ -1,0 +1,7 @@
+127.0.0.1 - - [28/Oct/2025:23:04:02 +0530] "GET / HTTP/1.1" 404 752
+0:0:0:0:0:0:0:1 - - [28/Oct/2025:23:04:03 +0530] "GET /ServletWrapperClass/registrationform.html HTTP/1.1" 200 2361
+0:0:0:0:0:0:0:1 - - [28/Oct/2025:23:04:03 +0530] "GET /favicon.ico HTTP/1.1" 404 763
+0:0:0:0:0:0:0:1 - - [28/Oct/2025:23:04:14 +0530] "POST /ServletWrapperClass/reg HTTP/1.1" 200 999
+127.0.0.1 - - [28/Oct/2025:23:16:42 +0530] "GET / HTTP/1.1" 404 752
+0:0:0:0:0:0:0:1 - - [28/Oct/2025:23:16:43 +0530] "GET /ServletWrapperClass/registrationform.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [28/Oct/2025:23:16:54 +0530] "POST /ServletWrapperClass/reg HTTP/1.1" 200 999

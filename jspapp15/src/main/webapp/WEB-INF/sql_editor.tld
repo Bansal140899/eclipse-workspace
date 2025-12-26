@@ -1,0 +1,9 @@
+<taglib>
+	<tlib-version>1.0</tlib-version>
+	<jsp-version>2.3</jsp-version>
+	<tag>
+	   <name>execute</name>
+	   <tag-class>com.durgasoft.handler.executehandler</tag-class>
+	   <body-content>jsp</body-content>
+	</tag>
+</taglib>

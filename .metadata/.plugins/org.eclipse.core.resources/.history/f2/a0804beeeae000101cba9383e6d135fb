@@ -1,0 +1,56 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>show notes page</title>
+<%@include file="All_Component/allcss.jsp"%>
+
+</head>
+<body>
+<%@include file="All_Component/navbar.jsp"%>
+
+<div class ="container">
+<h2 class="text-center">All Notes</h2>
+
+<div class="row">
+<div class="col-md-12">
+<div class="card mt-3">
+
+<img alt="" src="IMG/paper.jpg" class="card-img-top mt-2 ms-auto" style="max-width:100px;">
+
+<div class="card-body p-4">
+<h5 class ="card-title"></h5>
+<p></p>
+<p>
+<b class="text-succes">published by :</b><br><b class="text-primary"></b>
+</p>
+
+<div class="container text-center mt-2">
+<a href="DeleteServlet?note_id=" class="btn btn-danger">Delte</a></div>
+<a href="DeleteServlet?note_id=" class="btn btn-danger">Edit</a></div>
+
+
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+<%@include file="All_Component/footer.jsp"%>
+</body>
+</html>

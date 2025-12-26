@@ -1,0 +1,46 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ page import="java.sql.Connection" %>
+<%@ page import="com.db.DBConnect" %>
+	
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<style type="text/css">
+.back-img {
+background:url("IMG/BACKGROUND.png");
+width:100%;
+height:80vh;	
+background-repeat: no-repeat;   /* repeat band */
+    background-size: cover;        /* full cover */
+    background-position: center;   /* center me set */
+}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Home Page</title>
+<%@include file="All_Component/allcss.jsp"%>
+</head>
+<body>
+	<%@include file="All_Component/navbar.jsp"%>
+	
+	<%
+	Connection conn = DBConnect.getConn();
+	System.out.println(conn);
+	
+	
+	%>
+	
+	
+	
+	<div class="container-fluid back-img">
+	<div class=  "text-center">
+	<h1><i class="fa fa-book text-white mr-1" aria-hidden="true"></i>E Notes-Save Your Notes</h1>
+    <a href="login.jsp" class="btn btn-light"><i class="fa fa-user mr-1" aria-hidden="true"></i>Login</a>	
+	<a href="register.jsp" class="btn btn-light"><i class="fa fa-user-plus mr-1" aria-hidden="true"></i>Registers</a>	
+	</div>
+	
+	</div>
+	<%@include file="All_Component/footer.jsp"%>
+	
+</body>
+</html>

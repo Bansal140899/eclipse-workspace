@@ -1,0 +1,8 @@
+package com.ajaysoft.a;
+
+public class Node {
+	int data;
+	Linkeddlist next;
+	
+
+}

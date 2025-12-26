@@ -1,0 +1,87 @@
+package com.ajay.dao;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import com.ajay.beans.Student;
+import com.ajay.factory.ConnectionFactory;
+
+public class StudentDaoImp1 implements StudentDao {
+
+	@Override
+	public String add(Student student) {
+		
+		String status = "";
+		try {
+			Student std = search(student.getSid());
+			if(std == null) {
+				Connection con = ConnectionFactory.getConnection();
+				Statement st = con.createStatement();
+				
+				int rowCount = st.executeUpdate("insert into studentt values('"+student.getSid()+"' ,'"+student.getSname()+"' ,'"+student.getSaddr()+"')");
+				if(rowCount == 1) {
+					status = "success";
+					
+				}else {
+					status = "failur";
+				}
+				
+			}else {
+				
+				status = "existed";
+				
+			}
+			
+		}catch(Exception e) {
+			status = "failure";
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+
+	@Override
+	public Student search(String sid) {
+		Student student = null;
+		try {
+			
+			Connection con = ConnectionFactory.getConnection();
+			Statement st = con.createStatement();
+			
+			ResultSet rs  =st.executeQuery("select * from studentt where SID = '"+sid+"'");
+			boolean b  =rs.next();
+			if(b==true) {
+				student = new Student();
+				student.setSid(rs.getString("SID"));
+				student.setSname(rs.getString("SNAME"));
+				student.setSaddr(rs.getString("SADDR"));
+				
+			}else {
+				student = null;
+			}
+			
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		
+		
+		return student;
+	}
+
+	@Override
+	public String update(Student student) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String delete(String sid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

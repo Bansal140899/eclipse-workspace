@@ -1,0 +1,49 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+    <%
+
+UserDetails user1 = (UserDetails)session.getAttribute("userD");
+
+if(user1 == null){
+	response.sendRedirect("login.jsp");
+	session.setAttribute("login-error" ,"please login...");
+}
+
+
+%>
+    
+    
+    
+    
+    
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<%@include file="All_Component/allcss.jsp"%>
+<%@include file="All_Component/navbar.jsp"%>
+</head>
+<body>
+<div class="container-fluid">
+<div class ="card">
+<div class = "card-body">
+<div class="container-fluid p-0">
+	
+		<div class="card py-5">
+			<div class="card-body text-center">
+				<img alt="" src="IMG/paper.jpg" class="img-fluid mx-auto"
+					style="width: 450px;">
+				<h1>START TAKING YOUR NOTES</h1>
+				<a href="addnotes.jsp" class="btn btn-outline-primary">Start Here</a>
+			</div>
+		</div>
+	</div>
+	<%@include file="All_Component/footer.jsp"%>
+
+</div>
+
+</div>
+</body>
+</html>

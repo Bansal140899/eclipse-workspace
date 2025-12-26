@@ -1,0 +1,28 @@
+package com.ajaysoft.a;
+
+public class sortting {
+	public static int[] buvlesort(int arr[]) {
+		int length =  arr.length-1;
+		
+		for(int i =0; i<length; i++) {
+			for(int j =i+1; j<length; j++) {
+				
+				if(arr[i]>arr[j]) {
+					int temp = arr[i];
+					arr[i] = arr[j];
+					arr[j] = temp;
+				}
+			}
+			
+		}
+		return arr;
+	}
+	public static void main(String[] args) {
+		//bubule sorting algrothim
+		
+		int arr[] = {1 ,7,5,3,22,5,7,9,0,10 ,5,6,7};
+		
+	   System.out.print(sortting.buvlesort(arr));
+	}
+
+}

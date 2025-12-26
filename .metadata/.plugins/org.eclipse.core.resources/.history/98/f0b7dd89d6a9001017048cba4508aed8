@@ -1,0 +1,31 @@
+package com.ajay.dao;
+
+import com.ajay.beans.Student;
+
+public class StudentDaoImp1 implements StudentDao {
+
+	@Override
+	public String add(Student student) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Student search(String sid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String update(Student student) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String delete(String sid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

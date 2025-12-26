@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Move &apos;First.jsp&apos; to &apos;jSpAPP01&apos;" description="Move &apos;First.jsp&apos; to &apos;jSpAPP01&apos;" destination="/jSpAPP01" element1="src/main/webapp/First.jsp" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1761751250636" updateReferences="true"/>&#x0A;<refactoring comment="Move &apos;First.jsp&apos; to &apos;WEB-INF&apos;" description="Move &apos;First.jsp&apos; to &apos;WEB-INF&apos;" destination="src/main/webapp/WEB-INF" element1="First.jsp" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1761751287484" updateReferences="true"/>
+</session>

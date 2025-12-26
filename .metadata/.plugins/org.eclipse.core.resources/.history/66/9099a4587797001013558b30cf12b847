@@ -1,0 +1,13 @@
+package com.prasoon;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+
+public class ServletDemo  extends HttpServlet{
+	
+	  @Override
+	public void init() throws ServletException {
+		
+	}
+
+}

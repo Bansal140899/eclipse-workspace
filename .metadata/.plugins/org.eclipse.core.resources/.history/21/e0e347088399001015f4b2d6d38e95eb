@@ -1,0 +1,38 @@
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import jakarta.servlet.ServletConfig;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+public class MyServlet extends HttpServlet {
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		resp.setContentType("text/html");
+		
+		PrintWriter pw = resp.getWriter();
+		ServletConfig config = getServletConfig();
+		String Logicalname =  config.getServletName();
+		
+		String driver = config.getInitParameter("driver");
+		String url = config.getInitParameter("url");
+		String user = config.getInitParameter("user");
+		String password = config.getInitParameter("password");
+		
+		pw.println("<html><body><h1>");
+		pw.println("Logical Nmae : " +Logicalname+"<br><br");
+		pw.println("Driver : " +driver+"<br><br");
+		pw.println("url : " +url+"<br><br");
+		pw.println("user: " +user+"<br><br");
+		pw.println("password : " +password+"<br><br");
+		
+		pw.println("</h1></body></html>");
+		
+	}
+	
+	
+
+}

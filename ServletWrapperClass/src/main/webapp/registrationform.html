@@ -1,0 +1,101 @@
+<html>
+<head>
+<title>Animated Registration Form</title>
+<style>
+    body {
+        background: linear-gradient(to right, #e0f7fa, #fff);
+        font-family: Arial, sans-serif;
+        animation: fadeInBody 1.5s ease-in;
+    }
+
+    @keyframes fadeInBody {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    h2 {
+        color: red;
+        text-align: center;
+        animation: zoomIn 1s ease-in;
+    }
+
+    h3 {
+        color: blue;
+        text-align: center;
+        animation: zoomIn 1.2s ease-in;
+    }
+
+    @keyframes zoomIn {
+        0% { transform: scale(0.5); opacity: 0; }
+        100% { transform: scale(1); opacity: 1; }
+    }
+
+    form {
+        width: 400px;
+        margin: 40px auto;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        padding: 30px;
+        animation: slideIn 1.2s ease-out;
+    }
+
+    @keyframes slideIn {
+        0% { transform: translateY(-30px); opacity: 0; }
+        100% { transform: translateY(0); opacity: 1; }
+    }
+
+    pre {
+        font-size: 16px;
+        color: #333;
+    }
+
+    input[type="text"] {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 8px;
+        width: 180px;
+        transition: all 0.3s ease;
+    }
+
+    input[type="text"]:focus {
+        border-color: #2196f3;
+        transform: scale(1.05);
+        box-shadow: 0 0 8px #90caf9;
+    }
+
+    input[type="submit"] {
+        background: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: all 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+        background: #388e3c;
+        transform: scale(1.1);
+        box-shadow: 0 0 10px #81c784;
+    }
+</style>
+</head>
+<body>
+
+    <h2>Ajay Software Solution</h2>
+    <h3>User Registration Form</h3>
+    
+    <form method="post" action="reg">
+        <pre>
+            User Name    :: <input type="text" name="uname"/>
+            User Email   :: <input type="text" name="uemail"/>@drugasoft.com
+            User Address :: <input type="text" name="uaddr"/>
+            
+            <input type="submit" value="Registration">
+        </pre>
+    </form>
+
+</body>
+</html>

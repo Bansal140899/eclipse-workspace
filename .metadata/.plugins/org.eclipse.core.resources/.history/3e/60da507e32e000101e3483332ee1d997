@@ -1,0 +1,68 @@
+package com.Servlet;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
+import java.io.IOException;
+
+import com.DAO.PostDao;
+import com.User.Post;
+import com.db.DBConnect;
+
+
+@WebServlet("/AddNotesServlet")
+public class AddNotesServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    
+    public AddNotesServlet() {
+        super();
+       
+    }
+
+	
+	
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	    HttpSession session = request.getSession(false);
+
+	    
+	    System.out.println( "Session value " + session );
+	    System.out.println( "uid value " + session.getAttribute("uid") );
+	    
+	    if (session.getAttribute("Id") == null) {
+	        response.sendRedirect("login.jsp");
+	        return;
+	    }
+	    
+	    System.out.println( "Title value " + request.getParameter("title"));
+	    System.out.println( "Content value " + request.getParameter("content") );
+
+	    int uid = (int) session.getAttribute("Id");  // ✅ FIX
+		String title = request.getParameter("title");
+		String content = request.getParameter("content");
+		
+		try {
+			PostDao po = new PostDao(DBConnect.getConn());
+			boolean f = po.AddNotes(title, content, uid);
+			 
+			if(f) {
+				System.out.println("data insert successsfully");
+			}else {
+				System.out.println("data is not insterted");
+			}
+		}
+		catch( Exception e ) {
+			System.out.println( "Exception Aagyii oyeee "+e.getMessage() );
+			System.out.println( e.getStackTrace() );
+		}
+		
+		
+	}
+
+}

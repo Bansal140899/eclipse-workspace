@@ -1,0 +1,38 @@
+
+public class Rotatethearray {
+	  
+	public static int[] rotate(int num[] ,int i ,int j) {
+		while(i<j) {
+			int temp = num[i];
+			num[i] = num[j];
+			num[j]=temp;
+			i++;
+			j--;
+			
+			
+		}
+		return num;
+		
+	}
+	
+	
+	public static void main(String[] args) {
+		
+		int num [] = {1 ,2 ,3 ,4 ,5 ,6,7};
+		int k = 4;
+//		int i =0;
+		int j =num.length-1;
+	 
+		
+		
+		
+		rotate(num ,k+1 ,j);
+		rotate(num ,0 ,k-2);
+		rotate(num ,0 ,j);
+		
+		for(int m : num) {
+			System.out.println(m);
+		}
+	}
+
+}

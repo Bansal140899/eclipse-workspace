@@ -1,0 +1,22 @@
+package com.prasoon;
+
+import java.io.IOException;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+public class ServletDemo  extends HttpServlet{
+	
+	  @Override
+	public void init() throws ServletException {
+		System.out.println("Container has started...........");
+	}
+	  
+	  @Override
+	protected void service(HttpServletRequest arg0, HttpServletResponse arg1) throws ServletException, IOException {
+	
+	}
+
+}

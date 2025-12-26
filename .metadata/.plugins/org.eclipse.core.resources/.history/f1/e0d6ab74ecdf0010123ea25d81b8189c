@@ -1,0 +1,116 @@
+package com.ajaysoft.a;
+
+
+class Node {
+    int data;
+    Node next;
+
+    Node(int data) {
+        this.data = data;
+        this.next = null;
+    }
+}
+
+
+class MyLinkedList {
+
+    Node head;
+    Node tail;
+
+   
+    void insert_first(int data) {
+
+        Node newNode = new Node(data);
+
+        if (head == null) {
+            head = newNode;
+            tail = newNode;
+            return;
+        }
+
+        newNode.next = head;
+        head = newNode;
+    }
+
+    
+    void insert_last(int data) {
+
+        Node newNode = new Node(data);
+
+        if (head == null) {
+            head = newNode;
+            tail = newNode;
+            return;
+        }
+
+        tail.next = newNode;
+        tail = newNode;
+    }
+    
+    
+    
+    void delete_first() {
+
+        if (head == null) {
+            System.out.println("List is empty");
+            return;
+        }
+
+        head = head.next;
+
+        // agar sirf ek hi node thi
+        if (head == null) {
+            tail = null;
+        }
+    }
+    void delete_last() {
+    	if(head==null) {
+    		System.out.println("list does not exist !");
+    		return;
+    	}
+    	if(head== tail) {
+    		head = null;
+    		tail = null;
+    	}
+    	Node temp = head;
+    	while(temp.next != tail) {
+    		temp = temp.next;
+    		break;
+    	
+    	}
+    	 temp.next = null;
+         tail = temp;
+    }
+
+
+    
+    void printList() {
+        Node temp = head;
+
+        while (temp != null) {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+        System.out.println();
+    }
+}
+
+
+public class Linked_List {
+    public static void main(String[] args) {
+
+        MyLinkedList l1 = new MyLinkedList();
+ 
+        
+     
+     
+
+        l1.insert_first(5);
+        l1.insert_first(5);
+        l1.delete_first();
+        l1.insert_first(5);
+        l1.delete_last();
+
+        l1.printList();
+    }
+}

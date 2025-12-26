@@ -1,0 +1,12 @@
+<taglib>
+  <tlib-version>1.0</tlib-version>
+  <jsp_version>2.3</jsp_version>
+  
+  <function>
+    <name>sayHello</name>
+    <function-class>com.drugasoft.function.hello</function-class>
+    <function-signature>java.lang.String sayHello(java.lang.String)</function-signature>
+  
+  </function>
+
+</taglib>
